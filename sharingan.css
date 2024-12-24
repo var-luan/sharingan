@@ -1,0 +1,168 @@
+body{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: #171C2C;
+}
+
+.sharingan{
+	width: 450px;
+	height: 450px;
+	background: hsl(0,100%,36%);
+	border-radius: 50%;
+
+	border: 15px solid #000;
+	box-shadow: 0 0 100px 10px hsl(0,100%,36%);
+}
+
+.shadow {
+	width: 100%;
+	height: 100%;
+	border-radius: 50%;
+	box-shadow: 0 0 100px 10px #000 inset;
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	transition: .8s;
+}
+
+.pupil{
+	width: 80px;
+	height: 80px;
+	background: #000;
+	border-radius: 50%;
+	box-shadow: 0 0 100px 10px #000;
+	transition: .8s;
+	z-index: 1;
+}
+
+@keyframes rotateIris{
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(-360deg);
+	}
+}
+
+.iris {
+	position: absolute;
+	margin: auto;
+	width: 230px;
+	height: 230px;
+	display: flex;
+	border: 2px solid #000;
+	border-radius: 50%;
+	transition: .8s;
+	animation: 5s linear infinite rotateIris;
+}
+
+
+.tomoe{
+	width: 60px;
+	height: 60px;
+	position: absolute;
+	background-color: #000;
+	border-radius: 50%;
+	transition: .8s;
+}
+
+.tomoe:nth-child(1) {
+	left: 0;
+	right: 0;
+	top: -30px;
+	margin: 0 auto;
+	transform: rotate(-50deg);
+}
+
+.tomoe:nth-child(2) {
+	left: -15px;
+	bottom: 30px;
+	transform: rotate(195deg);
+}
+
+.tomoe:nth-child(3) {
+	right: -15px;
+	bottom: 30px;
+	transform: rotate(90deg);
+}
+
+.tomoe::before { 
+	content: '';
+	position: absolute;
+	top: -8px;
+	left: 2px;
+	width: 70px;
+	height: 60px;
+	border-radius: 50%;
+	border-top: 30px solid #000;
+	border-left: 10px solid transparent;
+	transform: rotate(-35deg);
+	background: transparent;
+	transition: .8s;
+}
+
+.sharingan:hover .tomoe::before { 
+	content: '';
+    position: absolute;
+    top: 43px;
+    left: -8px;
+    width: 143px;
+    height: 170px;
+    border-radius: 90% 0% 30% 0%;
+    border-top: 10px solid #000;
+    border-left: 77px solid #000;
+    transform: rotate(108deg);
+    background: transparent;
+    transition: .8s;
+}
+
+.sharingan:hover .tomoe:nth-child(1) {
+	left: 0;
+    right: 0;
+    top: -93px;
+    margin: 0 auto;
+    transform: rotate(0deg);
+
+	width: 90px;
+    height: 200px;
+    position: absolute;
+    background-color: #000;
+    border-radius: 50% / 100% 100% 0 0;
+    transition: .8s;
+}
+
+.sharingan:hover .tomoe:nth-child(2) {
+	margin: 0 auto;
+	left: -24px;
+    bottom: -39px;
+    transform: rotate(240deg);
+
+	width: 90px;
+    height: 200px;
+    position: absolute;
+    background-color: #000;
+    border-radius: 50% / 100% 100% 0 0;
+    transition: .8s;
+}
+
+.sharingan:hover .tomoe:nth-child(3) {
+    margin: 0 auto;
+	right: -22px;
+    bottom: -41px;
+    transform: rotate(120deg);
+
+	width: 90px;
+    height: 200px;
+    position: absolute;
+    background-color: #000;
+    border-radius: 50% / 100% 100% 0 0;
+    transition: .8s;
+}
+
+.sharingan:hover .pupil {
+	width: 60px;
+	height: 60px;
+	background: #A00000;
+}
